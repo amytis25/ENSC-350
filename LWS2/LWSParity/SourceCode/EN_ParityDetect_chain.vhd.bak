@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+Entity EN_ParityDetect_chain is
+	Generic ( N : natural := 8 );
+	Port ( X : in std_logic_vector( N-1 downto 0 );
+	IsOdd : out std_logic );
+End Entity EN_ParityDetect_chain;
+
+architecture chain of  EN_ParityDetect_chain is 
+
+	    component EN_xor
+        Port ( A : in STD_LOGIC; B : in STD_LOGIC; R : out STD_LOGIC );
+		end component;
+		
+		signal temp: std_logic_vector(N-2 downto 0);
+		
+		begin
+		U0: EN_xor port map (A => X(0), B => X(1), R => temp(0))
+		gen_chain: for ii in 2 to N-2 generate
+			EN_xor port map (A => temp(ii-2), B => X(ii) , R => temp(ii-1);
+		end generate; 
+		IsOdd <= temp(N-2); 
+		
+end architecture chain; 

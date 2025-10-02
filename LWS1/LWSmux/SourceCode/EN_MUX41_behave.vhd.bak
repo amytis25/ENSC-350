@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity EN_MUX41_behave is 
+	port (
+		A, B, C, D  : in std_logic;
+		S0, S1 : in std_logic;
+		Y : out std_logic
+	);
+end EN_MUX41_behave;
+
+architecture behavioural of EN_MUX41_behave is
+
+begin
+process (A, B, C, D, S0, S1)
+  begin
+    if    (S0 = '0' and S1 = '0') then Y <= A;
+    elsif (S0 = '1' and S1 = '0') then Y <= B;
+    elsif (S0 = '0' and S1 = '1') then Y <= C;
+    else Y <= D;  -- S0='1' and S1='1'
+    end if;
+end behavioural;

@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity EN_MUX41_select is 
+	port (
+		A, B, C, D  : in std_logic;
+		S0, S1 : in std_logic;
+		Y : out std_logic
+	);
+end EN_MUX41_select;
+
+architecture RTL of EN_MUX41_select is
+
+begin
+	y <= A when not S0 and not S1;
+	y <= B when  S0 and not S1;
+	y <= C when not S0 and S1;
+	y <= D when S0 and S1;
+	
+end RTL;
+	
+

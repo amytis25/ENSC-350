@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity EN_MUX41_prim is 
+	port (
+		A, B, C, D  : in std_logic;
+		S0, S1 : in std_logic;
+		Y : out std_logic
+	);
+end EN_MUX41_prim;
+
+
+architecture Structure of EN_MUX41_prim is
+    -- component declarations
+    component EN_inv_1bit
+        Port ( A : in STD_LOGIC; Y : out STD_LOGIC );
+    end component;
+
+    component EN_and_2inp
+        Port ( A, B : in STD_LOGIC; Y : out STD_LOGIC );
+    end component;
+
+    component EN_or_2inp
+        Port ( A, B : in STD_LOGIC; Y : out STD_LOGIC );
+    end component;
+
+    -- internal signals
+     signal S0n, S1n : std_logic;
+	  signal t00, t0 : std_logic;
+	  signal t11, t1 : std_logic;
+	  signal t22, t2 : std_logic;
+	  signal t33, t3 : std_logic;
+	  signal or01, or23 : std_logic;
+
+begin
+    -- invert select bits
+    U1: EN_inv_1bit port map (A => S0, Y => S0n);
+    U2: EN_inv_1bit port map (A => S1, Y => S1n);
+
+    -- I0 term: ~S1 & ~S0 & I0
+    U3a: EN_and_2inp port map (A => S1n, B => S0n, Y => t00);
+    U3b: EN_and_2inp port map (A => t00,  B => A,   Y => t0);
+
+    -- I1 term: ~S1 & S0 & I1
+    U4a: EN_and_2inp port map (A => S1n, B => S0,  Y => t11);
+    U4b: EN_and_2inp port map (A => t11,  B => B,   Y => t1);
+
+    -- I2 term: S1 & ~S0 & I2
+    U5a: EN_and_2inp port map (A => S1,  B => S0n, Y => t22);
+    U5b: EN_and_2inp port map (A => t22,  B => C,   Y => t2);
+
+    -- I3 term: S1 & S0 & I3
+    U6a: EN_and_2inp port map (A => S1,  B => S0,  Y => t33);
+    U6b: EN_and_2inp port map (A => t33,  B => D,   Y => t3);
+
+    -- combine results with ORs
+    U7: EN_or_2inp port map (A => t0,   B => t1,   Y => or01);
+    U8: EN_or_2inp port map (A => t2,   B => t3,   Y => or23);
+    U9: EN_or_2inp port map (A => or01, B => or23, Y => Y);
+
+end Structure;

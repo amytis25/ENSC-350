@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity inv_1bit is
+	port(
+		A : in std_logic;
+		Y : out std_logic;
+	);
+end inv_1bit;
+
+architecture logic of inv_1bit is
+	begin
+		Y <= not A;
+	end logic;
