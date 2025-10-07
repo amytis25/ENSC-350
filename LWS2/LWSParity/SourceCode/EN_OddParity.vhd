@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 Entity EN_OddParity is
-	Generic ( N : natural := 24 ); -- 1 to 8 including 8 
+	Generic ( N : natural := 7); -- 1 to 8 including 8 
 	Port ( X : in std_logic_vector( N-1 downto 0 );
 	IsOdd : out std_logic );
 End Entity EN_OddParity;
@@ -24,9 +24,9 @@ End Entity EN_OddParity;
 		end generate; 
 		IsOdd <= temp(N-2); 
 		
-end architecture chain_prim; */
+end architecture chain_prim; 
 
-/*architecture chain of  EN_OddParity is 
+architecture chain of  EN_OddParity is 
 
 		
 		signal temp: std_logic_vector(N-2 downto 0);

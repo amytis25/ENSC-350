@@ -1,0 +1,145 @@
+// Copyright (C) 2024  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+
+// 
+// Device: Altera EP2AGX45CU17C6 Package UFBGA358
+// 
+
+//
+// This file contains Slow Corner delays for the design using part EP2AGX45CU17C6,
+// with speed grade 6, core voltage 0.9VmV, and temperature 85 Celsius
+//
+
+// 
+// This SDF file should be used for Questa Intel FPGA (VHDL) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "EN_OddParity")
+  (DATE "10/02/2025 15:22:42")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus Prime")
+  (VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "arriaii_io_obuf")
+    (INSTANCE \\IsOdd\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (353:353:353) (354:354:354))
+        (IOPATH i o (2479:2479:2479) (2513:2513:2513))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[6\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (631:631:631) (674:674:674))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[4\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (607:607:607) (650:650:650))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[5\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (565:565:565) (621:621:621))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[1\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (555:555:555) (611:611:611))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[0\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (641:641:641) (684:684:684))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[2\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (515:515:515) (568:568:568))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_io_ibuf")
+    (INSTANCE \\X\[3\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (627:627:627) (670:670:670))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE \\gen_recursive\:xor_inst\|R\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4589:4589:4589) (4592:4592:4592))
+        (PORT datac (4575:4575:4575) (4588:4588:4588))
+        (PORT datae (4403:4403:4403) (4373:4373:4373))
+        (PORT dataf (4424:4424:4424) (4396:4396:4396))
+        (IOPATH datab combout (550:550:550) (545:545:545))
+        (IOPATH datac combout (373:373:373) (353:353:353))
+        (IOPATH datae combout (275:275:275) (248:248:248))
+        (IOPATH dataf combout (118:118:118) (108:108:108))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "arriaii_lcell_comb")
+    (INSTANCE \\gen_recursive\:xor_inst\|R\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4437:4437:4437) (4399:4399:4399))
+        (PORT datab (4428:4428:4428) (4400:4400:4400))
+        (PORT datad (4456:4456:4456) (4434:4434:4434))
+        (PORT dataf (340:340:340) (417:417:417))
+        (IOPATH dataa combout (553:553:553) (547:547:547))
+        (IOPATH datab combout (550:550:550) (545:545:545))
+        (IOPATH datad combout (393:393:393) (352:352:352))
+        (IOPATH dataf combout (118:118:118) (108:108:108))
+      )
+    )
+  )
+)

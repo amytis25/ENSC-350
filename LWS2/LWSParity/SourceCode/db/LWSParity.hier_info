@@ -2,134 +2,35 @@
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
 X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
 X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:bottom_inst.X[3]
-X[4] => en_oddparity:gen_recursive:bottom_inst.X[4]
-X[5] => en_oddparity:gen_recursive:bottom_inst.X[5]
-X[6] => en_oddparity:gen_recursive:bottom_inst.X[6]
-X[7] => en_oddparity:gen_recursive:bottom_inst.X[7]
-X[8] => en_oddparity:gen_recursive:bottom_inst.X[8]
-X[9] => en_oddparity:gen_recursive:bottom_inst.X[9]
-X[10] => en_oddparity:gen_recursive:bottom_inst.X[10]
-X[11] => en_oddparity:gen_recursive:bottom_inst.X[11]
-X[12] => en_oddparity:gen_recursive:top_inst.X[0]
-X[13] => en_oddparity:gen_recursive:top_inst.X[1]
-X[14] => en_oddparity:gen_recursive:top_inst.X[2]
-X[15] => en_oddparity:gen_recursive:top_inst.X[3]
-X[16] => en_oddparity:gen_recursive:top_inst.X[4]
-X[17] => en_oddparity:gen_recursive:top_inst.X[5]
-X[18] => en_oddparity:gen_recursive:top_inst.X[6]
-X[19] => en_oddparity:gen_recursive:top_inst.X[7]
-X[20] => en_oddparity:gen_recursive:top_inst.X[8]
-X[21] => en_oddparity:gen_recursive:top_inst.X[9]
-X[22] => en_oddparity:gen_recursive:top_inst.X[10]
-X[23] => en_oddparity:gen_recursive:top_inst.X[11]
+X[3] => en_oddparity:gen_recursive:top_inst.X[0]
+X[4] => en_oddparity:gen_recursive:top_inst.X[1]
+X[5] => en_oddparity:gen_recursive:top_inst.X[2]
+X[6] => en_oddparity:gen_recursive:top_inst.X[3]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
 X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:bottom_inst.X[3]
-X[4] => en_oddparity:gen_recursive:bottom_inst.X[4]
-X[5] => en_oddparity:gen_recursive:bottom_inst.X[5]
-X[6] => en_oddparity:gen_recursive:top_inst.X[0]
-X[7] => en_oddparity:gen_recursive:top_inst.X[1]
-X[8] => en_oddparity:gen_recursive:top_inst.X[2]
-X[9] => en_oddparity:gen_recursive:top_inst.X[3]
-X[10] => en_oddparity:gen_recursive:top_inst.X[4]
-X[11] => en_oddparity:gen_recursive:top_inst.X[5]
+X[2] => en_oddparity:gen_recursive:top_inst.X[0]
+X[3] => en_oddparity:gen_recursive:top_inst.X[1]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:top_inst.X[0]
-X[4] => en_oddparity:gen_recursive:top_inst.X[1]
-X[5] => en_oddparity:gen_recursive:top_inst.X[2]
+X[1] => en_oddparity:gen_recursive:top_inst.X[0]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
@@ -140,92 +41,18 @@ R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:top_inst.X[0]
-X[4] => en_oddparity:gen_recursive:top_inst.X[1]
-X[5] => en_oddparity:gen_recursive:top_inst.X[2]
+X[1] => en_oddparity:gen_recursive:top_inst.X[0]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
@@ -242,108 +69,25 @@ R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:bottom_inst.X[3]
-X[4] => en_oddparity:gen_recursive:bottom_inst.X[4]
-X[5] => en_oddparity:gen_recursive:bottom_inst.X[5]
-X[6] => en_oddparity:gen_recursive:top_inst.X[0]
-X[7] => en_oddparity:gen_recursive:top_inst.X[1]
-X[8] => en_oddparity:gen_recursive:top_inst.X[2]
-X[9] => en_oddparity:gen_recursive:top_inst.X[3]
-X[10] => en_oddparity:gen_recursive:top_inst.X[4]
-X[11] => en_oddparity:gen_recursive:top_inst.X[5]
+X[1] => en_oddparity:gen_recursive:top_inst.X[0]
+X[2] => en_oddparity:gen_recursive:top_inst.X[1]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:top_inst.X[0]
-X[4] => en_oddparity:gen_recursive:top_inst.X[1]
-X[5] => en_oddparity:gen_recursive:top_inst.X[2]
+X[1] => en_oddparity:gen_recursive:top_inst.X[0]
 IsOdd <= en_xor:gen_recursive:xor_inst.R
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
@@ -353,99 +97,8 @@ R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:bottom_inst.X[1]
-X[2] => en_oddparity:gen_recursive:bottom_inst.X[2]
-X[3] => en_oddparity:gen_recursive:top_inst.X[0]
-X[4] => en_oddparity:gen_recursive:top_inst.X[1]
-X[5] => en_oddparity:gen_recursive:top_inst.X[2]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
 X[0] => IsOdd.DATAIN
 IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-X[2] => en_oddparity:gen_recursive:top_inst.X[1]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => en_oddparity:gen_recursive:bottom_inst.X[0]
-X[1] => en_oddparity:gen_recursive:top_inst.X[0]
-IsOdd <= en_xor:gen_recursive:xor_inst.R
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:top_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:top_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst
-X[0] => IsOdd.DATAIN
-IsOdd <= X[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
-A => R.IN0
-B => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |EN_OddParity|EN_OddParity:\gen_recursive:bottom_inst|EN_xor:\gen_recursive:xor_inst
