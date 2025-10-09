@@ -44,9 +44,9 @@ end architecture chain; */
 
 architecture tree of  EN_OddParity is 
 		
-		component EN_xor
-        Port ( A : in STD_LOGIC; B : in STD_LOGIC; R : out STD_LOGIC );
-		end component;
+	component EN_xor
+		Port ( A : in STD_LOGIC; B : in STD_LOGIC; R : out STD_LOGIC );
+	end component;
 		
 		signal top_par, bottom_par : std_logic;
 		
@@ -57,27 +57,27 @@ architecture tree of  EN_OddParity is
 	begin
 	
 	  -- Recursive case
-	  gen_recursive : if N > 1 generate
+		gen_recursive : if N > 1 generate
 		 -- top half has N_TOP bits: X(N-1 downto N_BOT)
-		 top_inst : entity work.EN_OddParity(tree)
+		top_inst : entity work.EN_OddParity(tree)
 			generic map ( N => N_TOP )
 			port map    ( X => X(N-1 downto N_BOT),
 							  IsOdd => top_par );
 
 		 -- bottom half has N_BOT bits: X(N_BOT-1 downto 0)
-		 bottom_inst : entity work.EN_OddParity(tree)
+		bottom_inst : entity work.EN_OddParity(tree)
 			generic map ( N => N_BOT )
 			port map    ( X => X(N_BOT-1 downto 0),
 							  IsOdd => bottom_par );
 
-		 xor_inst : entity work.EN_xor
+		xor_inst : entity work.EN_xor
 			port map ( A => top_par, B => bottom_par, R => IsOdd );
-	  end generate;
+		end generate;
 
 	  -- Base case
-	  gen_base : if N = 1 generate
-		 IsOdd <= X(0);
-	  end generate;
+		gen_base : if N = 1 generate
+			IsOdd <= X(0);
+		end generate;
 		
 end architecture tree; 
 
