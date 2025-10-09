@@ -58,22 +58,22 @@ begin
 
 		--compute assuming Cin = 0 
 		process(A,B)
-			variable temp:	 unsigned(N downto 0);
+			variable temp0:	 unsigned(N downto 0);
 		begin
-			temp := unsigned('0' & A) + unsigned('0' & B) + 0;
+			temp0 := unsigned('0' & A) + unsigned('0' & B) + 0;
 			
-			sum_c0 <= std_logic_vector(temp(N-1 downto 0));
-			carry_c0 <= temp(N);
+			sum_c0 <= std_logic_vector(temp0(N-1 downto 0));
+			carry_c0 <= temp0(N);
 		end process;
 		
 		--compute assuming Cin = 1
 		process(A,B)
-			variable temp:	 unsigned(N downto 0);
+			variable temp1:	 unsigned(N downto 0);
 		begin
-			temp := unsigned('0' & A) + unsigned('0' & B) + 1;
+			temp1 := unsigned('0' & A) + unsigned('0' & B) + 1;
 			
-			sum_c1 <= std_logic_vector(temp(N-1 downto 0));
-			carry_c1 <= temp(N);
+			sum_c1 <= std_logic_vector(temp1(N-1 downto 0));
+			carry_c1 <= temp1(N);
 		end process;
 		
 		--select correct results based on actual Cin
