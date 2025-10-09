@@ -55,7 +55,31 @@ architecture CondSum of EN_Adder is
 		signal carry_sel : std_logic;
 		
 begin
-
+		/*-- tried to use condSum architecture to do it twice
+		case_0 : entity work.EN_Adder(CondSum)
+			generic map ( N => N )
+			port map    ( A => A, B => B, Cin => '0', S => sum_c0, Cout => carry_c0, Ovfl => carry_c0);
+			
+		case_1 : entity work.EN_Adder(CondSum)
+			generic map ( N => N )
+			port map    ( A => A, B => B, Cin => '1', S => sum_c1, Cout => carry_c1, Ovfl => carry_c1);
+		
+		process(A,B)
+			variable temp0:	 unsigned(N downto 0);
+		begin
+			temp0 := unsigned('0' & A) + unsigned('0' & B) + 0;
+			
+			sum_c0 <= std_logic_vector(temp0(N-1 downto 0));
+			carry_c0 <= temp0(N);
+		end process;
+		
+		--select correct results based on actual Cin
+		with Cin select
+			S <= sum_c0 when '0', sum_c1 when others;
+			
+		with Cin select
+			Cout <= carry_c0 when '0', carry_c1 when others;*/
+			
 		--compute assuming Cin = 0 
 		process(A,B)
 			variable temp0:	 unsigned(N downto 0);
