@@ -5,7 +5,6 @@ incremental_db/
 .qsys_edit/
 .qws
 .sopcinfo
-*.rpt
 *.srf
 *.pin
 *.cdf
