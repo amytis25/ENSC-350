@@ -60,7 +60,6 @@ incremental_db/
 *.qpc
 *.qpb
 *.qpa
-*.qpf
 *.qpg
 *.qph
 *.qpi
