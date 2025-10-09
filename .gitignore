@@ -78,7 +78,6 @@ incremental_db/
 *.qpx
 *.qpy
 *.qpz
-*.qpf
 *.qpg
 *.qph
 *.qpi
@@ -97,7 +96,6 @@ incremental_db/
 *.qpx
 *.qpy
 *.qpz
-*.qpf
 *.qpg
 *.qph
 *.qpi
@@ -116,7 +114,6 @@ incremental_db/
 *.qpx
 *.qpy
 *.qpz
-*.qpf
 *.qpg
 *.qph
 *.qpi
