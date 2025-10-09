@@ -1,53 +1,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
+Use STD.TEXTIO.all;
+Use ieee.numeric_std.all;
 
-Entity EN_OddParity is
-	Generic ( N : natural := 7); -- 1 to 8 including 8 
+entity EN_OddParity is
+	Generic ( N : natural); -- 1 to 8 including 8 
 	Port ( X : in std_logic_vector( N-1 downto 0 );
 	IsOdd : out std_logic );
-End Entity EN_OddParity;
+end Entity EN_OddParity;
 
-/*architecture chain_prim of  EN_OddParity is 
-
-	   component EN_xor
-        Port ( A : in STD_LOGIC; B : in STD_LOGIC; R : out STD_LOGIC );
-		end component;
-		
-		signal temp: std_logic_vector(N-2 downto 0);
-		
-		begin
-		U0: EN_xor port map (A => X(0), B => X(1), R => temp(0));
-		
-		gen_chain: for i in 2 to N-1 generate
-			U: EN_xor port map (A => temp(i-2), B => X(i) , R => temp(i-1));
-			
-		end generate; 
-		IsOdd <= temp(N-2); 
-		
-end architecture chain_prim; 
-
-architecture chain of  EN_OddParity is 
-
-		
-		signal temp: std_logic_vector(N-2 downto 0);
-		
-		begin
-		
-		U0 : temp(0) <= X(0) xor X(1);
-		
-		gen_chain: for i in 2 to N-1 generate
-			U: temp(i-1) <= temp (i-2) xor X(i);
-		end generate; 
-		IsOdd <= temp(N-2); 
-		
-end architecture chain; */
 
 architecture tree of  EN_OddParity is 
 		
-		/*component EN_xor
-        Port ( A : in STD_LOGIC; B : in STD_LOGIC; R : out STD_LOGIC );
-		end component;
-		*/
 		signal top_par, bottom_par : std_logic;
 		
 	-- sizes for odd/even N
@@ -71,10 +35,7 @@ architecture tree of  EN_OddParity is
 							  IsOdd => bottom_par );
 
 		 xor_inst : IsOdd <= top_par xor bottom_par;
-		 /*xor_inst :entity work.EN_xor
-			port map ( A => top_par, B => bottom_par, R => IsOdd );*/
-	  end generate;
-
+	end generate; 
 	  -- Base case
 	  gen_base : if N = 1 generate
 		 IsOdd <= X(0);
