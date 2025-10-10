@@ -13,7 +13,7 @@ entity EN_Adder is
 	);
 end EN_Adder;
 
-/*architecture baseline of EN_Adder is
+/*architecture ripple of EN_Adder is
 	signal C : std_logic_vector (N-1 downto 0);
 	signal P,G : std_logic_vector (N-1 downto 0);
 	
@@ -23,7 +23,7 @@ end EN_Adder;
 	S(0) <= P(0) xor Cin;
 	C(0) <= G(0) or (P(0) and Cin);
 	
-	ripple: for i in 1 to N-1 generate
+	rippleNetwork: for i in 1 to N-1 generate
 		P(i) <= A(i) xor B(i);
 		G(i)<= A(i) and B(i);
 		S(i) <= P(i) xor C(i-1);
@@ -32,7 +32,7 @@ end EN_Adder;
 	Ovfl <= C(N-1);
 	
 	
-end baseline;*/
+end ripple;*/
 /*
 architecture FastRipple of EN_Adder is
 
@@ -48,63 +48,67 @@ signal temp : unsigned(N downto 0);
 	 Ovfl <= (temp(N) xor temp(N-1));
 end FastRipple;*/
 
-architecture CondSum of EN_Adder is 
+architecture CSA of EN_Adder is 
+	constant N_half : integer := N / 2; 
+	signal Cout0, Cout1, Chalf : std_logic := '0';
+	signal sum0, sum1 : std_logic_vector ((N_half-1) downto 0) := (others => '0');
+	
+	
+	begin
+		recur : if N > 2 generate
+			begin 
+    CSAlow : entity work.EN_Adder(CSA)
+      generic map (N => N_half)
+      port map (
+        A => A(N_half-1 downto 0),
+        B => B(N_half-1 downto 0),
+        S => S(N_half-1 downto 0),
+        Cin => Cin,
+        Cout => Chalf,
+        Ovfl => open
+      );
+    CSAzero : entity work.EN_Adder(CSA)
+      generic map (N => N_half)
+      port map (
+        A    => A(N-1 downto N_half),
+        B    => B(N-1 downto N_half),
+        S    => sum0,
+        Cin  => '0',
+        Cout => Cout0,
+        Ovfl => open
+      );
+    CSAone : entity work.EN_Adder(CSA)
+      generic map (N => N_half)
+      port map (
+        A    => A(N-1 downto N_half),
+        B    => B(N-1 downto N_half),
+        S    => sum1,
+        Cin  => '1',
+        Cout => Cout1,
+        Ovfl => open
+      );
+		end generate recur;
+		
+		leaf: if N = 2 generate
+			signal g, p : std_logic;
+			begin
+			g <= A(0) and B(0);
+			p <= A(0) xor B(0);
+			S(0) <= p xor Cin;
+			Chalf <= g or (Cin and p);
+			
+			sum0(0) <= A(1) xor B(1);
+			sum1(0) <= not (A(1) xor B(1));
+			Cout0 <= A(1) and B(1);
+			Cout1 <= A(1) or B(1);
+		end generate leaf;
+		
+		
+		S((N-1)downto N_half) <= sum1 when Chalf = '1' else sum0;
+		Cout <= Cout1 when Chalf = '1' else Cout0;
+		
+		Ovfl <= (A(N-1) xor B(N-1)) xor (S(N-1) xor A(N-1)) when Cin='0' else
+				(A(N-1) xor B(N-1)) and (S(N-1) xor A(N-1));
 
-		signal sum_c0, sum_c1 : std_logic_vector(N-1 downto 0);
-		signal carry_c0, carry_c1 : std_logic;
-		signal carry_sel : std_logic;
-		
-begin
-		/*-- tried to use condSum architecture to do it twice
-		case_0 : entity work.EN_Adder(CondSum)
-			generic map ( N => N )
-			port map    ( A => A, B => B, Cin => '0', S => sum_c0, Cout => carry_c0, Ovfl => carry_c0);
 			
-		case_1 : entity work.EN_Adder(CondSum)
-			generic map ( N => N )
-			port map    ( A => A, B => B, Cin => '1', S => sum_c1, Cout => carry_c1, Ovfl => carry_c1);
-		
-		process(A,B)
-			variable temp0:	 unsigned(N downto 0);
-		begin
-			temp0 := unsigned('0' & A) + unsigned('0' & B) + 0;
-			
-			sum_c0 <= std_logic_vector(temp0(N-1 downto 0));
-			carry_c0 <= temp0(N);
-		end process;
-		
-		--select correct results based on actual Cin
-		with Cin select
-			S <= sum_c0 when '0', sum_c1 when others;
-			
-		with Cin select
-			Cout <= carry_c0 when '0', carry_c1 when others;*/
-			
-		--compute assuming Cin = 0 
-		process(A,B)
-			variable temp0:	 unsigned(N downto 0);
-		begin
-			temp0 := unsigned('0' & A) + unsigned('0' & B) + 0;
-			
-			sum_c0 <= std_logic_vector(temp0(N-1 downto 0));
-			carry_c0 <= temp0(N);
-		end process;
-		
-		--compute assuming Cin = 1
-		process(A,B)
-			variable temp1:	 unsigned(N downto 0);
-		begin
-			temp1 := unsigned('0' & A) + unsigned('0' & B) + 1;
-			
-			sum_c1 <= std_logic_vector(temp1(N-1 downto 0));
-			carry_c1 <= temp1(N);
-		end process;
-		
-		--select correct results based on actual Cin
-		with Cin select
-			S <= sum_c0 when '0', sum_c1 when others;
-			
-		with Cin select
-			Cout <= carry_c0 when '0', carry_c1 when others;
-			
-end CondSum;
+end CSA;
