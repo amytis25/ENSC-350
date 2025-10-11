@@ -1,5 +1,5 @@
 Fitter report for DP1
-Fri Oct 10 17:19:20 2025
+Fri Oct 10 18:52:35 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 10 17:19:20 2025          ;
+; Fitter Status                      ; Successful - Fri Oct 10 18:52:35 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; DP1                                            ;
 ; Top-level Entity Name              ; EN_Adder                                       ;
@@ -3184,7 +3184,7 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/asa414/ENSC-350/DP1-G12-350-1257/output_files/DP1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 6071 megabytes
-    Info: Processing ended: Fri Oct 10 17:19:20 2025
+    Info: Processing ended: Fri Oct 10 18:52:35 2025
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:15
 

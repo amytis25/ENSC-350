@@ -15,6 +15,12 @@ architecture behavior of TB_Adder_CSA is
   signal TBS : std_logic_vector(N-1 downto 0);
   signal TBCout : std_logic;
   signal TBOvfl : std_logic;
+
+-- Test-vector file
+  constant TVS_FILE : string := "Adder_CSA.tvs";  -- change name/path as needed
+  constant prestimtime : time := 1 ns;
+  constant poststimtime : time := 1 s;
+file     tvf      : text;
 begin
   -- Instantiate Device Under Test
   uut: entity work.EN_Adder(CSA)

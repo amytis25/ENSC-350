@@ -14,7 +14,7 @@ Z0 w1760143378
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 21
+!i122 8
 Z4 dC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation
 Z5 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
 Z6 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
@@ -24,9 +24,9 @@ VdIl20HcHNJK8jZ7O?JC6e1
 !s100 iG[Y;A;0G6AzDFdBD:oNd1
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1760146525
+Z8 !s110 1760146999
 !i10b 1
-Z9 !s108 1760146525.000000
+Z9 !s108 1760146999.000000
 Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
 Z11 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
 !i113 1
@@ -37,11 +37,11 @@ R1
 R2
 R3
 Z14 DEx4 work 8 en_adder 0 22 dIl20HcHNJK8jZ7O?JC6e1
-!i122 21
+!i122 8
 l58
-L52 64
-V[LVAb0DE4[:;79m5V^nQU3
-!s100 co4fCalZ_jLTO=V?I<2820
+Z15 L52 64
+Z16 V[LVAb0DE4[:;79m5V^nQU3
+Z17 !s100 co4fCalZ_jLTO=V?I<2820
 R7
 33
 R8
@@ -57,11 +57,11 @@ R1
 R2
 R3
 R14
-!i122 21
+!i122 8
 l41
-L38 13
-V?HGkdU`]]Nl1ShRRT3[Lf0
-!s100 P]P?PiOFgc7OP<Vad1RT=0
+Z18 L38 13
+Z19 V?HGkdU`]]Nl1ShRRT3[Lf0
+Z20 !s100 P]P?PiOFgc7OP<Vad1RT=0
 R7
 33
 R8
@@ -77,11 +77,11 @@ R1
 R2
 R3
 R14
-!i122 21
+!i122 8
 l21
-L17 20
-VNK4I^z2ADGDX7EP9WNK]42
-!s100 XILflWllPekd_mNa7;^7M3
+Z21 L17 20
+Z22 VNK4I^z2ADGDX7EP9WNK]42
+Z23 !s100 XILflWllPekd_mNa7;^7M3
 R7
 33
 R8
@@ -92,56 +92,12 @@ R11
 !i113 1
 R12
 R13
-Etb_adder
-Z15 w1760145378
-R1
-R2
-R3
-!i122 16
-R4
-Z16 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder.vhd
-Z17 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder.vhd
-l0
-L6 1
-Vl;mlJl05i@B:BZ9nVjIa[3
-!s100 [@SH;^Dl7m240=WGB3MBL1
-R7
-32
-Z18 !s110 1760145713
-!i10b 1
-Z19 !s108 1760145713.000000
-Z20 !s90 -reportprogress|300|-work|work|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder.vhd|
-Z21 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder.vhd|
-!i113 1
-Z22 o-work work
-R13
-Abehavior
-R14
-R1
-R2
-R3
-DEx4 work 8 tb_adder 0 22 l;mlJl05i@B:BZ9nVjIa[3
-!i122 16
-l18
-Z23 L9 56
-VGR<>2PYIg4bho95YAGkNR0
-!s100 6CO;`[iEXKg4I=SKCg3[83
-R7
-32
-R18
-!i10b 1
-R19
-R20
-R21
-!i113 1
-R22
-R13
 Etb_adder_csa
 Z24 w1760146408
 R1
 R2
 R3
-!i122 23
+!i122 6
 R4
 Z25 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
 Z26 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
@@ -151,9 +107,9 @@ Va@JK6ZY0dz32]fgYIeX@B3
 !s100 oDB[7XD6DZJ=R0kLM4kcJ3
 R7
 33
-Z27 !s110 1760146526
+Z27 !s110 1760146998
 !i10b 1
-Z28 !s108 1760146526.000000
+Z28 !s108 1760146998.000000
 Z29 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
 Z30 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
 !i113 1
@@ -165,9 +121,9 @@ R1
 R2
 R3
 DEx4 work 12 tb_adder_csa 0 22 a@JK6ZY0dz32]fgYIeX@B3
-!i122 23
+!i122 6
 l18
-R23
+Z31 L9 56
 VnQBJ=CRCBHFKd`bO0?JY?0
 !s100 `W_3SFMQ5nD4GP0n<e;@A3
 R7
@@ -181,14 +137,14 @@ R30
 R12
 R13
 Etb_adder_rip
-Z31 w1760146423
+Z32 w1760146423
 R1
 R2
 R3
-!i122 22
+!i122 7
 R4
-Z32 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
-Z33 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
+Z33 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
+Z34 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
 l0
 L6 1
 V2F_oDzP?<F:gEJ;UKAZMC1
@@ -198,8 +154,8 @@ R7
 R8
 !i10b 1
 R9
-Z34 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
-Z35 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
+Z35 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
+Z36 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
 !i113 1
 R12
 R13
@@ -209,41 +165,18 @@ R1
 R2
 R3
 DEx4 work 12 tb_adder_rip 0 22 2F_oDzP?<F:gEJ;UKAZMC1
-!i122 22
+!i122 7
 l18
-R23
+R31
 VVk2Kd4eRM1==^F76WKIAj3
 !s100 6RIf8?<dY`1Og2hhINJ<V1
 R7
 33
-R27
+R8
 !i10b 1
 R9
-R34
 R35
+R36
 !i113 1
 R12
-R13
-Etb_adder_ripple
-w1760143417
-R1
-R2
-R3
-!i122 5
-R4
-8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_ripple.vhd
-FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_ripple.vhd
-l0
-L6 1
-VIMPAdfj4=ShHP03gn:`ka3
-!s100 YC9oSl[6=G<ez=kIZ_Mao1
-R7
-32
-!s110 1760143426
-!i10b 1
-!s108 1760143426.000000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_ripple.vhd|
-!s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_ripple.vhd|
-!i113 1
-Z36 o-work work -2002 -explicit
 R13
