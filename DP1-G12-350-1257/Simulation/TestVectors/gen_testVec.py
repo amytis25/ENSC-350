@@ -21,27 +21,43 @@ def signed_overflow(a, b, s, n):
 
 mask = (1 << N) - 1
 
-lines = []
-for _ in range(NUM_VECTORS):
-    A = random.getrandbits(N)
-    B = random.getrandbits(N)
-    Cin = random.randint(0, 1)
+def generate_vectors(n, count):
+    lines = []
+    for _ in range(count):
+        A = random.getrandbits(n)
+        B = random.getrandbits(n)
+        Cin = random.randint(0, 1)
 
-    total = A + B + Cin
-    S = total & mask
-    Cout = (total >> N) & 1
-    Ovfl = signed_overflow(A, B, S, N)
+        total = A + B + Cin
+        S = total & ((1 << n) - 1)
+        Cout = (total >> n) & 1
+        Ovfl = signed_overflow(A, B, S, n)
 
-    lines.append(
-        f"{to_hex(WIDTH_HEX, A)} {to_hex(WIDTH_HEX, B)} {Cin} "
-        f"{to_hex(WIDTH_HEX, S)} {Cout} {Ovfl}"
-    )
+        lines.append(
+            f"{to_hex(WIDTH_HEX, A)} {to_hex(WIDTH_HEX, B)} {Cin} "
+            f"{to_hex(WIDTH_HEX, S)} {Cout} {Ovfl}"
+        )
+    return lines
 
-header = (
-    #f"-- N-bit adder test vectors\n"
-    #f"-- N={N}, NUM_VECTORS={NUM_VECTORS}\n"
-    f"-- Columns: A B Cin S_expected Cout Ovfl (hex hex bit hex bit bit)\n"
-)
+MARKER = "-- ===== Randomly Generated Test Cases ====="
 
-outfile.write_text(header + "\n".join(lines) + "\n")
-print("Wrote:", outfile)
+header_line = "-- Columns: A B Cin S_expected Cout Ovfl (hex hex bit hex bit bit)"
+
+# Generate the random vectors
+vectors = generate_vectors(N, NUM_VECTORS)
+
+# If the file exists, preserve content up to the marker, otherwise create a basic header
+if outfile.exists():
+    text = outfile.read_text()
+    if MARKER in text:
+        before, _sep, _after = text.partition(MARKER)
+        new_text = before.rstrip() + "\n" + MARKER + "\n" + "\n".join(vectors) + "\n"
+    else:
+        # append marker and vectors to existing file
+        new_text = text.rstrip() + "\n\n" + MARKER + "\n" + "\n".join(vectors) + "\n"
+else:
+    # create file with header, marker and vectors
+    new_text = header_line + "\n\n" + MARKER + "\n" + "\n".join(vectors) + "\n"
+
+outfile.write_text(new_text)
+print("Wrote/Updated:", outfile)
