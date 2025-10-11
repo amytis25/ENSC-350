@@ -3,27 +3,30 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 
-entity TB_Adder_CSA is
-end TB_Adder_CSA;
+
+entity TB_Adder_RIP is
+end TB_Adder_RIP;
 
 architecture behavior of TB_Adder_RIP is
   constant N : integer := 64;
 
   -- DUT ports
   signal TBA, TBB : std_logic_vector(N-1 downto 0) := (others => '0');
-  signal TBCin : std_logic := '0';
-  signal TBS : std_logic_vector(N-1 downto 0);
-  signal TBCout : std_logic;
-  signal TBOvfl : std_logic;
+  signal TBCin    : std_logic := '0';
+  signal TBS      : std_logic_vector(N-1 downto 0);
+  signal TBCout   : std_logic;
+  signal TBOvfl   : std_logic;
+
   -- Test-vector file
-  constant TestVectorFile : string := "Adder00.tvs";  -- change name/path as needed
-  constant PreStimTime : time := 1 ns;
-  constant PostStimTime : time := 1 ns; -- experiment to choose correct value
+  constant TestVectorFile : string := "TestVectors/Adder00.tvs";
+  constant PreStimTime    : time   := 1 ns;
+  constant PostStimTime   : time   := 100 ns;  -- adjust after experimenting
+
 begin
   --------------------------------------------------------------------
   -- Device Under Test
   --------------------------------------------------------------------
-  uut: entity work.EN_Adder(CSA)
+  dut: entity work.EN_Adder(ripple)
     generic map (N => N)
     port map (
       A => TBA,
@@ -35,16 +38,19 @@ begin
     );
 
   --------------------------------------------------------------------
-  -- Stimulus Process
+  -- Stimulus Process with per-vector line printing
   --------------------------------------------------------------------
   stimulus : process
     file      tvf : text;
     variable  L, L2 : line;
-    variable  s : string(1 to 1);
+    constant  MAXLEN : natural := 2048;
+    variable  s : string(1 to MAXLEN);
     variable  vA, vB, vS : std_logic_vector(N-1 downto 0);
     variable  vCin, vCout, vOvfl : std_logic;
-    variable  first_char : character;
     variable  skip_line  : boolean;
+    variable  idx        : natural := 0;   -- measurement index
+    variable  pass       : boolean;
+    variable  OUTL       : line;          -- for printing one summary line
   begin
     file_open(tvf, TestVectorFile, read_mode);
     report "Using test vectors from file: " & TestVectorFile;
@@ -57,8 +63,14 @@ begin
         next;
       end if;
 
-      s := L.all;
       skip_line := false;
+
+      if L'length > MAXLEN then
+        report "Input line exceeds MAXLEN=" & integer'image(MAXLEN) severity failure;
+      end if;
+
+      s := (others => ' ');
+      s(1 to L'length) := L.all;  -- length-safe copy
 
       -- Check if the first two non-space characters are "--"
       for i in s'range loop
@@ -69,50 +81,64 @@ begin
           exit;
         end if;
       end loop;
-
       if skip_line then
         next;
       end if;
 
       -- Rebuild the line to parse values
       L2 := null;
-      write(L2, s);
+      write(L2, s(1 to L'length));
 
       -- Parse: A B Cin S Cout Ovfl
-      hread(L2, vA);
-      hread(L2, vB);
+      HREAD(L2, vA);
+      HREAD(L2, vB);
       read (L2, vCin);
-      hread(L2, vS);
+      HREAD(L2, vS);
       read (L2, vCout);
       read (L2, vOvfl);
 
-      -- Apply inputs
+      -- 1) Drive 'X' for PreStimTime (per spec)
+      TBA   <= (others => 'X');
+      TBB   <= (others => 'X');
+      TBCin <= 'X';
+      wait for PreStimTime;
+
+      -- 2) Apply inputs
       TBA   <= vA;
       TBB   <= vB;
       TBCin <= vCin;
 
-      wait for PreStimTime;
+      -- 3) Wait for outputs to settle (experiment to choose PostStimTime)
+      wait for PostStimTime;
 
-      -- Validate outputs
-      assert TBS = vS
-        report "S mismatch: A=" & to_hstring(TBA) &
+      -- 4) Compute pass/fail and (optionally) assert
+      pass := (TBS = vS) and (TBCout = vCout) and (TBOvfl = vOvfl);
+
+      assert pass
+        report "Mismatch: i=" & integer'image(idx) &
+               " A=" & to_hstring(TBA) &
                " B=" & to_hstring(TBB) &
                " Cin=" & std_logic'image(TBCin) &
-               " got S=" & to_hstring(TBS) &
-               " expected S=" & to_hstring(vS)
+               "  got S=" & to_hstring(TBS) & " Cout=" & std_logic'image(TBCout) & " Ovfl=" & std_logic'image(TBOvfl) &
+               "  exp S=" & to_hstring(vS)  & " Cout=" & std_logic'image(vCout)  & " Ovfl=" & std_logic'image(vOvfl)
         severity error;
 
-      assert TBCout = vCout
-        report "Cout mismatch: got=" & std_logic'image(TBCout) &
-               " expected=" & std_logic'image(vCout)
-        severity error;
+      -- 5) Print one concise summary line (goes to ModelSim transcript)
+      OUTL := null;
+      write(OUTL, idx);
+      write(OUTL, string'(" A="));              write(OUTL, to_hstring(TBA));
+      write(OUTL, string'(" B="));              write(OUTL, to_hstring(TBB));
+      write(OUTL, string'(" Cin="));            write(OUTL, TBCin);
+      write(OUTL, string'("  |  S="));          write(OUTL, to_hstring(TBS));
+      write(OUTL, string'(" Cout="));           write(OUTL, TBCout);
+      write(OUTL, string'(" Ovfl="));           write(OUTL, TBOvfl);
+      write(OUTL, string'("  status="));
+      if pass then write(OUTL, string'("PASS"));
+               else write(OUTL, string'("FAIL"));
+      end if;
+      writeline(output, OUTL);
 
-      assert TBOvfl = vOvfl
-        report "Ovfl mismatch: got=" & std_logic'image(TBOvfl) &
-               " expected=" & std_logic'image(vOvfl)
-        severity error;
-
-      wait for PostStimTime;
+      idx := idx + 1;
     end loop;
 
     report "Simulation completed: reached end of " & TestVectorFile;
@@ -120,3 +146,4 @@ begin
     wait;
   end process;
 end architecture;
+

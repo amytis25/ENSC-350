@@ -8,182 +8,175 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA/20.1
+dC:/intelFPGA_lite/20.1
 Een_adder
-Z0 w1760154477
+Z0 w1760210616
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 62
-Z4 dC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation
-Z5 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
-Z6 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
+!i122 10
+Z4 dC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation
+Z5 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
+Z6 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
 l0
 L7 1
 VdIl20HcHNJK8jZ7O?JC6e1
 !s100 iG[Y;A;0G6AzDFdBD:oNd1
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1760156081
+Z8 !s110 1760222201
 !i10b 1
-Z9 !s108 1760156081.000000
-Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
-Z11 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
+Z9 !s108 1760222201.000000
+Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
+!s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
 !i113 1
-Z12 o-work work -2008 -explicit
-Z13 tExplicit 1 CvgOpt 0
+Z11 o-work work -2008 -explicit
+Z12 tExplicit 1 CvgOpt 0
 Acsa
 R1
 R2
 R3
-Z14 DEx4 work 8 en_adder 0 22 dIl20HcHNJK8jZ7O?JC6e1
-!i122 62
+Z13 DEx4 work 8 en_adder 0 22 dIl20HcHNJK8jZ7O?JC6e1
+!i122 10
 l59
-Z15 L53 64
-Z16 VWC@9]IUVP==n2DJ2c^9J23
-Z17 !s100 J8?nOejWii2V>I[^G9[Fz0
+Z14 L53 64
+VWC@9]IUVP==n2DJ2c^9J23
+Z15 !s100 J8?nOejWii2V>I[^G9[Fz0
 R7
 33
 R8
 !i10b 1
 R9
 R10
-R11
+Z16 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
 !i113 1
+R11
 R12
-R13
 Afastripple
 R1
 R2
 R3
-R14
-!i122 62
+R13
+!i122 10
 l42
-Z18 L39 13
-Z19 V`A`c1gnRHQF=@f83c?Q`K3
-Z20 !s100 l6U^<E]9oXd=7fSo7<7IJ2
+Z17 L39 13
+V`A`c1gnRHQF=@f83c?Q`K3
+Z18 !s100 l6U^<E]9oXd=7fSo7<7IJ2
 R7
 33
 R8
 !i10b 1
 R9
 R10
-R11
+R16
 !i113 1
+R11
 R12
-R13
 Aripple
 R1
 R2
 R3
-R14
-!i122 62
+R13
+!i122 10
 l21
-Z21 L17 21
-Z22 VBXK]kRlOb97BaKj5nSJP21
-Z23 !s100 m03ZFA8VdoR6X;4WLY`W01
+Z19 L17 21
+VBXK]kRlOb97BaKj5nSJP21
+Z20 !s100 m03ZFA8VdoR6X;4WLY`W01
 R7
 33
 R8
 !i10b 1
 R9
 R10
+R16
+!i113 1
 R11
-!i113 1
 R12
-R13
 Etb_adder_csa
-Z24 w1760155735
+Z21 w1760220896
 R1
 R2
 R3
-!i122 61
+!i122 8
 R4
-Z25 8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
-Z26 FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
-l0
-L6 1
-Va@JK6ZY0dz32]fgYIeX@B3
-!s100 oDB[7XD6DZJ=R0kLM4kcJ3
-R7
-33
-R8
-!i10b 1
-R9
-Z27 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
-Z28 !s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
-!i113 1
-R12
-R13
-Abehavior
-R14
-Z29 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R1
-R2
-R3
-DEx4 work 12 tb_adder_csa 0 22 _cU`RL?Yh7`TDaJN[YiK=3
-!i122 60
-l25
-L10 150
-VPWhd=;aXm2z`U=zQS5CO91
-!s100 E<dR9;J3X_R_E>GdV7HFG2
-R7
-33
-R8
-!i10b 1
-R9
-!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
-!s107 C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
-!i113 1
-R12
-R13
-FC:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
-w1760155928
-8C:/Users/asa414/ENSC-350/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
-Etb_adder_rip
-w1760152789
-R29
-R1
-R2
-R3
-!i122 28
-R4
-R25
-R26
+Z22 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
+Z23 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
 l0
 L7 1
-V`b4afoh5@7Yd8BERN^;9m1
-!s100 LRC?N<BbO`:B[f5@V?Vb]2
-R7
-33
-!s110 1760153519
-!i10b 1
-!s108 1760153519.000000
-R27
-R28
-!i113 1
-R12
-R13
-Abehavior
-R24
-R14
-R29
-R1
-R2
-R3
-DEx4 work 12 tb_adder_rip 0 22 `b4afoh5@7Yd8BERN^;9m1
-!i122 61
-l22
-L9 114
-VV<CNLEl]mKjoP5;mR7k_i0
-!s100 A2K[^>^Rfnn<A2I;Xo7gW0
+V1[QJ>]44SDW^3?90j_]UV0
+!s100 H_GoV`[F9NWG6i@gMVDKJ1
 R7
 33
 R8
 !i10b 1
 R9
-R27
-R28
+Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
+Z25 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
 !i113 1
+R11
 R12
-R13
+Abehavior
+Z26 DEx4 work 8 en_adder 0 22 Y07ZjIIc6<_3N8dajWh562
+R1
+R2
+R3
+DEx4 work 12 tb_adder_csa 0 22 1[QJ>]44SDW^3?90j_]UV0
+!i122 8
+l25
+Z27 L10 139
+VjE:M^jEk9_Rn0b^HO_Lo@1
+!s100 _B3[NIJIS?DjNK5EQlUb_0
+R7
+33
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R11
+R12
+Etb_adder_rip
+Z28 w1760220525
+R1
+R2
+R3
+!i122 9
+R4
+Z29 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
+Z30 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
+l0
+L7 1
+VclPo`WI7j4hPlXoYCoW?_3
+!s100 9=iiA]cEW[Ci8:_ShBzda1
+R7
+33
+R8
+!i10b 1
+R9
+Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
+Z32 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R26
+R1
+R2
+R3
+DEx4 work 12 tb_adder_rip 0 22 clPo`WI7j4hPlXoYCoW?_3
+!i122 9
+l25
+R27
+VcYXGYPH5@R4LTlEXWHnJg3
+!s100 >[fTjN;d4>YzkEUhDDIXO2
+R7
+33
+R8
+!i10b 1
+R9
+R31
+R32
+!i113 1
+R11
+R12

@@ -1,16 +1,34 @@
+# ===========================
+# run_ripple.do
+# ===========================
+
+
+
+
+# --- Compile design and testbench ---
+vcom -2008 -work work ../SourceCode/EN_Adder.vhd
+vcom -2008 -work work TB_Adder_RIP.vhd
+
+# --- Load simulation ---
+vsim work.TB_Adder_RIP
+
+# --- Add wave signals ---
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix hexadecimal /tb_adder_rip/TBA
-add wave -noupdate -radix hexadecimal /tb_adder_rip/TBB
-add wave -noupdate /tb_adder_rip/TBCin
-add wave -noupdate -radix hexadecimal /tb_adder_rip/TBS
-add wave -noupdate /tb_adder_rip/TBCout
-add wave -noupdate /tb_adder_rip/TBOvfl
+add wave -noupdate -divider {DUT Signals}
+add wave -noupdate -expand -group {DUT Signals} -divider Inputs
+add wave -noupdate -expand -group {DUT Signals} -height 45 -radix hexadecimal /tb_adder_rip/TBA
+add wave -noupdate -expand -group {DUT Signals} -height 45 -radix hexadecimal /tb_adder_rip/TBB
+add wave -noupdate -expand -group {DUT Signals} -height 45 /tb_adder_rip/TBCin
+add wave -noupdate -expand -group {DUT Signals} -divider Outputs
+add wave -noupdate -expand -group {DUT Signals} -height 45 -radix hexadecimal /tb_adder_rip/TBS
+add wave -noupdate -expand -group {DUT Signals} -height 45 /tb_adder_rip/TBOvfl
+add wave -noupdate -expand -group {DUT Signals} -height 45 /tb_adder_rip/TBCout
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
 quietly wave cursor active 0
-configure wave -namecolwidth 150
-configure wave -valuecolwidth 100
+configure wave -namecolwidth 184
+configure wave -valuecolwidth 120
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
 configure wave -snapdistance 10
@@ -23,4 +41,13 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1223 ps}
+WaveRestoreZoom {0 ps} {397688 ps}
+
+# --- Set up transcript file ---
+transcript file ../Documentation/OutputFiles/Sim-Transcript-Ripple.txt
+transcript on
+# --- Run the simulation ---
+run -all
+
+# --- End transcript capture ---
+transcript off
