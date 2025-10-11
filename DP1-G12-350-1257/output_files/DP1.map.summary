@@ -1,20 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Oct 10 19:04:22 2025
+Analysis & Synthesis Status : Successful - Fri Oct 10 20:45:59 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : DP1
 Top-level Entity Name : EN_Adder
-Family : Arria II GX
-Logic utilization : N/A
-    Combinational ALUTs : 188
-    Memory ALUTs : 0
+Family : Cyclone IV E
+Total logic elements : 161
+    Total combinational functions : 161
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 195
 Total virtual pins : 0
-Total block memory bits : 0
-DSP block 18-bit elements : 0
-Total GXB Receiver Channel PCS : 0
-Total GXB Receiver Channel PMA : 0
-Total GXB Transmitter Channel PCS : 0
-Total GXB Transmitter Channel PMA : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
-Total DLLs : 0

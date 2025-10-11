@@ -30,7 +30,8 @@ architecture ripple of EN_Adder is
 		S(i) <= P(i) xor C(i-1);
 		C(i) <= G(i) or (P(i) and C(i-1));
 	end generate;
-	Ovfl <= C(N-1);
+	Cout <= C(N-1);
+	Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
 	
 	
 end ripple;
@@ -108,8 +109,8 @@ architecture CSA of EN_Adder is
 		S((N-1)downto N_half) <= sum1 when Chalf = '1' else sum0;
 		Cout <= Cout1 when Chalf = '1' else Cout0;
 		
-		Ovfl <= (A(N-1) xor B(N-1)) xor (S(N-1) xor A(N-1)) when Cin='0' else
-				(A(N-1) xor B(N-1)) and (S(N-1) xor A(N-1));
+		Ovfl <= (not (A(N-1) xor B(N-1))) and (A(N-1) xor S(N-1));
+
 
 			
 end CSA;

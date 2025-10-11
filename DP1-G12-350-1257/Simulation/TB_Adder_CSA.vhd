@@ -2,6 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
+use ieee.std_logic_textio.all;  -- HREAD, to_hstring
 
 entity TB_Adder_CSA is
 end TB_Adder_CSA;
@@ -11,60 +12,149 @@ architecture behavior of TB_Adder_CSA is
 
   -- DUT ports
   signal TBA, TBB : std_logic_vector(N-1 downto 0) := (others => '0');
-  signal TBCin : std_logic := '0';
-  signal TBS : std_logic_vector(N-1 downto 0);
-  signal TBCout : std_logic;
-  signal TBOvfl : std_logic;
+  signal TBCin    : std_logic := '0';
+  signal TBS      : std_logic_vector(N-1 downto 0);
+  signal TBCout   : std_logic;
+  signal TBOvfl   : std_logic;
 
--- Test-vector file
-  constant TVS_FILE : string := "Adder_CSA.tvs";  -- change name/path as needed
-  constant prestimtime : time := 1 ns;
-  constant poststimtime : time := 1 s;
-file     tvf      : text;
+  -- Test-vector file and timing
+  constant TestVectorFile : string := "TestVectors/Adder00.tvs";  -- adjust if needed
+  constant PreStimTime    : time   := 1 ns;
+  constant PostStimTime   : time   := 1 ns;
+
 begin
-  -- Instantiate Device Under Test
+  --------------------------------------------------------------------
+  -- Device Under Test
+  --------------------------------------------------------------------
   uut: entity work.EN_Adder(CSA)
-    generic map ( N => N )
+    generic map (N => N)
     port map (
-      A => TBA,
-      B => TBB,
-      Cin => TBCin,
-      S => TBS,
+      A    => TBA,
+      B    => TBB,
+      Cin  => TBCin,
+      S    => TBS,
       Cout => TBCout,
       Ovfl => TBOvfl
     );
 
-  -- Stimulus & checks
+  --------------------------------------------------------------------
+  -- Stimulus Process
+  --------------------------------------------------------------------
   stimulus : process
-    variable expected : unsigned(N downto 0);  -- one extra bit for carry
-    variable msg      : line;
+    file      tvf    : text;
+    variable  status : file_open_status;
+
+    variable  L, L2  : line;
+
+    -- Safe buffer for reading a line (avoid constrained string crash)
+    constant  MAXLEN : natural := 2048;
+    variable  s      : string(1 to MAXLEN);
+    variable  len    : natural := 0;
+
+    -- Parsed fields
+    variable  vA, vB, vS : std_logic_vector(N-1 downto 0);
+    variable  vCin, vCout, vOvfl : std_logic;
+
+    -- Helpers
+    variable  skip_line : boolean;
+    variable  first_idx : integer;
   begin
-    ------------------------------------------------------------
-    -- Test 1: 1 + 1, Cin=0
-    ------------------------------------------------------------
-    TBA   <= std_logic_vector(to_unsigned(1, N));
-    TBB   <= std_logic_vector(to_unsigned(1, N));
-    TBCin <= '0';
-    wait for 1 ns;  -- allow time to settle
+    -- Open the test-vector file with status check
+    file_open(status, tvf, TestVectorFile, read_mode);
+    assert status = open_ok
+      report "Failed to open test-vector file: " & TestVectorFile &
+             ". Tip: ensure your vsim working directory contains the 'TestVectors' folder, " &
+             "or use an absolute path with forward slashes."
+      severity failure;
 
+    report "Using test vectors from file: " & TestVectorFile;
 
-    ------------------------------------------------------------
-    -- Test 2: 5 + 10, Cin=1
-    ------------------------------------------------------------
-    TBA   <= std_logic_vector(to_unsigned(5, N));
-    TBB   <= std_logic_vector(to_unsigned(10, N));
-    TBCin <= '1';
-    wait for 1 ns;
+    -- Read vectors until EOF
+    while not endfile(tvf) loop
+      readline(tvf, L);
 
-    ------------------------------------------------------------
-    -- Test 3: all 1's + Cin=1  (i.e., +1) -> wraps to 0 with Cout=1
-    ------------------------------------------------------------
-    TBA   <= (others => '1');
-    TBB   <= (others => '0');
-    TBCin <= '1';
-    wait for 1 ns;
+      -- Skip truly empty physical lines fast
+      if L'length = 0 then
+        next;
+      end if;
 
+      -- Copy LINE to buffer (bounded) and compute actual length
+      len := L'length;
+      if len > MAXLEN then
+        len := MAXLEN;  -- truncate very long lines defensively
+      end if;
+      for i in 1 to len loop
+        s(i) := L.all(i);
+      end loop;
 
+      -- Find first non-space character index (or mark as blank)
+      skip_line := false;
+      first_idx := 0;
+      for i in 1 to len loop
+        if s(i) > ' ' then
+          first_idx := i;
+          exit;
+        end if;
+      end loop;
+
+      -- Blank line (only spaces) -> skip
+      if first_idx = 0 then
+        next;
+      end if;
+
+      -- Comment line if first non-space chars are "--"
+      if (first_idx + 1) <= len and s(first_idx) = '-' and s(first_idx + 1) = '-' then
+        next;
+      end if;
+
+      -- Rebuild a fresh LINE for parsing
+      L2 := null;
+      write(L2, s(1 to len));
+
+      -- Parse one vector: A B Cin S Cout Ovfl
+      -- A, B, S are hex (no prefixes), length up to 16 hex digits for N=64.
+      hread(L2, vA);
+      hread(L2, vB);
+      read (L2, vCin);
+      hread(L2, vS);
+      read (L2, vCout);
+      read (L2, vOvfl);
+
+      -- Drive DUT inputs
+      TBA   <= vA;
+      TBB   <= vB;
+      TBCin <= vCin;
+
+      -- Allow to settle before check
+      wait for PreStimTime;
+
+      -- Checks
+      assert TBS = vS
+        report "S mismatch: A=" & to_hstring(TBA) &
+               " B=" & to_hstring(TBB) &
+               " Cin=" & std_logic'image(TBCin) &
+               " got S=" & to_hstring(TBS) &
+               " expected S=" & to_hstring(vS)
+        severity error;
+
+      assert TBCout = vCout
+        report "Cout mismatch: got=" & std_logic'image(TBCout) &
+               " expected=" & std_logic'image(vCout)
+        severity error;
+
+      assert TBOvfl = vOvfl
+        report "Ovfl mismatch: got=" & std_logic'image(TBOvfl) &
+               " expected=" & std_logic'image(vOvfl)
+        severity error;
+
+      -- Optional observation delay per vector
+      wait for PostStimTime;
+    end loop;
+
+    report "Simulation completed: reached end of " & TestVectorFile;
+    file_close(tvf);
     wait;
   end process;
+
 end architecture;
+
