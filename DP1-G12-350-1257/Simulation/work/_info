@@ -14,169 +14,169 @@ Z0 w1760210616
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 10
+!i122 16
 Z4 dC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation
-Z5 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
-Z6 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd
+Z5 8../SourceCode/EN_Adder.vhd
+Z6 F../SourceCode/EN_Adder.vhd
 l0
 L7 1
-VdIl20HcHNJK8jZ7O?JC6e1
+VY07ZjIIc6<_3N8dajWh562
 !s100 iG[Y;A;0G6AzDFdBD:oNd1
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1760222201
+Z8 !s110 1760230689
 !i10b 1
-Z9 !s108 1760222201.000000
-Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
-!s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
+Z9 !s108 1760230689.000000
+Z10 !s90 -reportprogress|300|-2008|-work|work|../SourceCode/EN_Adder.vhd|
+Z11 !s107 ../SourceCode/EN_Adder.vhd|
 !i113 1
-Z11 o-work work -2008 -explicit
-Z12 tExplicit 1 CvgOpt 0
+Z12 o-2008 -work work
+Z13 tExplicit 1 CvgOpt 0
 Acsa
 R1
 R2
 R3
-Z13 DEx4 work 8 en_adder 0 22 dIl20HcHNJK8jZ7O?JC6e1
-!i122 10
+Z14 DEx4 work 8 en_adder 0 22 Y07ZjIIc6<_3N8dajWh562
+!i122 16
 l59
-Z14 L53 64
-VWC@9]IUVP==n2DJ2c^9J23
-Z15 !s100 J8?nOejWii2V>I[^G9[Fz0
+L53 64
+V]Gk<8llZlmYKK;Rg3lc5J3
+!s100 J8?nOejWii2V>I[^G9[Fz0
 R7
 33
 R8
 !i10b 1
 R9
 R10
-Z16 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/SourceCode/EN_Adder.vhd|
-!i113 1
 R11
+!i113 1
 R12
+R13
 Afastripple
 R1
 R2
 R3
-R13
-!i122 10
+R14
+!i122 16
 l42
-Z17 L39 13
-V`A`c1gnRHQF=@f83c?Q`K3
-Z18 !s100 l6U^<E]9oXd=7fSo7<7IJ2
+L39 13
+VaV5oBMXj^`G@?lgmEO@<B1
+!s100 l6U^<E]9oXd=7fSo7<7IJ2
 R7
 33
 R8
 !i10b 1
 R9
 R10
-R16
-!i113 1
 R11
+!i113 1
 R12
+R13
 Aripple
 R1
 R2
 R3
-R13
-!i122 10
+R14
+!i122 16
 l21
-Z19 L17 21
-VBXK]kRlOb97BaKj5nSJP21
-Z20 !s100 m03ZFA8VdoR6X;4WLY`W01
+L17 21
+VGY?9KHak2o2d7kVbZ5DJS0
+!s100 m03ZFA8VdoR6X;4WLY`W01
 R7
 33
 R8
 !i10b 1
 R9
 R10
-R16
-!i113 1
 R11
+!i113 1
 R12
+R13
 Etb_adder_csa
-Z21 w1760220896
+Z15 w1760220896
 R1
 R2
 R3
-!i122 8
+!i122 15
 R4
-Z22 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
-Z23 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd
+Z16 8TB_Adder_CSA.vhd
+Z17 FTB_Adder_CSA.vhd
 l0
 L7 1
-V1[QJ>]44SDW^3?90j_]UV0
+V11__4;HD5c9mf[:<41`4[2
 !s100 H_GoV`[F9NWG6i@gMVDKJ1
 R7
 33
-R8
+Z18 !s110 1760230660
 !i10b 1
-R9
-Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
-Z25 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_CSA.vhd|
+Z19 !s108 1760230660.000000
+Z20 !s90 -reportprogress|300|-2008|-work|work|TB_Adder_CSA.vhd|
+Z21 !s107 TB_Adder_CSA.vhd|
 !i113 1
-R11
 R12
+R13
 Abehavior
-Z26 DEx4 work 8 en_adder 0 22 Y07ZjIIc6<_3N8dajWh562
+R14
 R1
 R2
 R3
-DEx4 work 12 tb_adder_csa 0 22 1[QJ>]44SDW^3?90j_]UV0
-!i122 8
+DEx4 work 12 tb_adder_csa 0 22 11__4;HD5c9mf[:<41`4[2
+!i122 15
 l25
-Z27 L10 139
-VjE:M^jEk9_Rn0b^HO_Lo@1
+Z22 L10 139
+V2]HhX?diYe3_kzVKSVb<C2
 !s100 _B3[NIJIS?DjNK5EQlUb_0
 R7
 33
-R8
+R18
 !i10b 1
-R9
-R24
-R25
+R19
+R20
+R21
 !i113 1
-R11
 R12
+R13
 Etb_adder_rip
-Z28 w1760220525
+Z23 w1760220525
 R1
 R2
 R3
-!i122 9
+!i122 17
 R4
-Z29 8C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
-Z30 FC:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd
+Z24 8TB_Adder_RIP.vhd
+Z25 FTB_Adder_RIP.vhd
 l0
 L7 1
-VclPo`WI7j4hPlXoYCoW?_3
+VfMI1QKB1FUXC9@BAj7@Xd2
 !s100 9=iiA]cEW[Ci8:_ShBzda1
 R7
 33
 R8
 !i10b 1
 R9
-Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
-Z32 !s107 C:/Users/Amytis/OneDrive/Desktop/SFU/2025/FALL 2025/ENSC350/Design_Projects/DP1/DP1-G12-350-1257/Simulation/TB_Adder_RIP.vhd|
+Z26 !s90 -reportprogress|300|-2008|-work|work|TB_Adder_RIP.vhd|
+!s107 TB_Adder_RIP.vhd|
 !i113 1
-R11
 R12
+R13
 Abehavior
-R26
+R14
 R1
 R2
 R3
-DEx4 work 12 tb_adder_rip 0 22 clPo`WI7j4hPlXoYCoW?_3
-!i122 9
+DEx4 work 12 tb_adder_rip 0 22 fMI1QKB1FUXC9@BAj7@Xd2
+!i122 17
 l25
-R27
-VcYXGYPH5@R4LTlEXWHnJg3
-!s100 >[fTjN;d4>YzkEUhDDIXO2
+R22
+VIzdzo9BSSGfT9m=;U<OYS1
+Z27 !s100 >[fTjN;d4>YzkEUhDDIXO2
 R7
 33
 R8
 !i10b 1
 R9
-R31
-R32
+R26
+Z28 !s107 TB_Adder_RIP.vhd|
 !i113 1
-R11
 R12
+R13
