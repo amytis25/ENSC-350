@@ -14,7 +14,7 @@ entity EN_Adder is
 	);
 end EN_Adder;
 
-architecture ripple of EN_Adder is
+/*architecture ripple of EN_Adder is
 	signal C : std_logic_vector (N-1 downto 0);
 	signal P,G : std_logic_vector (N-1 downto 0);
 	
@@ -48,7 +48,7 @@ signal temp : unsigned(N downto 0);
 		S    <= std_logic_vector(temp(N-1 downto 0));
     Cout <= temp(N);
 	 Ovfl <= (temp(N) xor temp(N-1));
-end FastRipple;
+end FastRipple;*/
 
 architecture CSA of EN_Adder is 
 	constant N_half : integer := N / 2; 
