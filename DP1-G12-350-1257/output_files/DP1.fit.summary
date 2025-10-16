@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Oct 10 20:46:09 2025
+Fitter Status : Successful - Thu Oct 16 14:42:24 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : DP1
 Top-level Entity Name : EN_Adder
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 161 / 114,480 ( < 1 % )
-    Total combinational functions : 161 / 114,480 ( < 1 % )
+Total logic elements : 271 / 114,480 ( < 1 % )
+    Total combinational functions : 271 / 114,480 ( < 1 % )
     Dedicated logic registers : 0 / 114,480 ( 0 % )
 Total registers : 0
 Total pins : 195 / 529 ( 37 % )

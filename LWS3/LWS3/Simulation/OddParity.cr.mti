@@ -1,4 +1,4 @@
-C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS/SourceCode/EN_OddParity.vhd {1 {vcom -work work -2008 -explicit -stats=none {C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd}
+C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO

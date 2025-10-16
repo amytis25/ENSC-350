@@ -1,66 +1,66 @@
 m255
 K4
 z2
-!s11e MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA/20.1
+dC:/Users/ses16/Documents/GitHub/ENSC-350/LWS4
 Een_oddparity
 Z0 w1759975631
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 16
-Z4 dC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS/Simulation
-Z5 8C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd
-Z6 FC:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd
+!i122 43
+Z4 dC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation
+Z5 8C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd
+Z6 FC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd
 l0
 L6 1
 VH7U?YTU]F>PdK7]PWjjNg0
 !s100 :K_<jf^YTQc:ee>fdmXiB1
 Z7 OV;C;2020.1;71
 33
-Z8 !s110 1759975649
+Z8 !s110 1760656838
 !i10b 1
-Z9 !s108 1759975649.000000
-Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd|
-!s107 C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd|
+Z9 !s108 1760656838.000000
+Z10 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd|
+Z11 !s107 C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/SourceCode/EN_OddParity.vhd|
 !i113 1
-Z11 o-work work -2008 -explicit
-Z12 tExplicit 1 CvgOpt 0
+Z12 o-work work -2008 -explicit
+Z13 tExplicit 1 CvgOpt 0
 Atree
 R1
 R2
 R3
-Z13 DEx4 work 12 en_oddparity 0 22 H7U?YTU]F>PdK7]PWjjNg0
-!i122 16
+Z14 DEx4 work 12 en_oddparity 0 22 H7U?YTU]F>PdK7]PWjjNg0
+!i122 43
 l21
-L13 32
-VaUPjW;?_BBECPABk0NVEI1
-!s100 ocDjXHY6bebLHV1N75CRL2
+Z15 L13 32
+Z16 VaUPjW;?_BBECPABk0NVEI1
+Z17 !s100 ocDjXHY6bebLHV1N75CRL2
 R7
 33
 R8
 !i10b 1
 R9
 R10
-Z14 !s107 C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\SourceCode\EN_OddParity.vhd|
-!i113 1
 R11
+!i113 1
 R12
+R13
 Etboddparity
-Z15 w1759974871
+Z18 w1760656836
 R1
 R2
 R3
-!i122 15
+!i122 42
 R4
-Z16 8C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\Simulation\TBOddParity.vhd
-Z17 FC:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\Simulation\TBOddParity.vhd
+Z19 8C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd
+Z20 FC:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd
 l0
 L6 1
 VC^M0PUag=QXYzFBP<F2WX3
@@ -70,29 +70,29 @@ R7
 R8
 !i10b 1
 R9
-Z18 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\Simulation\TBOddParity.vhd|
-Z19 !s107 C:\Users\ses16\Documents\GitHub\ENSC-350\LWS3\LWS\Simulation\TBOddParity.vhd|
+Z21 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd|
+Z22 !s107 C:/Users/ses16/Documents/GitHub/ENSC-350/LWS3/LWS3/Simulation/TBOddParity.vhd|
 !i113 1
-R11
 R12
-Asim
 R13
+Asim
+R14
 R1
 R2
 R3
 DEx4 work 11 tboddparity 0 22 C^M0PUag=QXYzFBP<F2WX3
-!i122 15
-l18
-L12 41
-V2G9[XScF8UGkUbLg[KS8W0
-!s100 K24kF_Akb5[RU[GPJR[Ob1
+!i122 42
+l50
+L12 88
+Vg]3eJ;VZU2;G^:?4j]16N3
+!s100 >n:Q<@C56>]^D9A77Z:lE3
 R7
 33
 R8
 !i10b 1
 R9
-R18
-R19
+R21
+R22
 !i113 1
-R11
 R12
+R13
